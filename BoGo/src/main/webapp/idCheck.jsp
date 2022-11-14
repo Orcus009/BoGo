@@ -17,7 +17,7 @@
 						<input type="text" class="id"name="id" maxlength="14" onKeyup="this.value=this.value.replace(/[^0-9A-Za-z]/g,'');" required autofocus autocomplete="off" placeholder="중복검사 버튼을 눌러주세요">
 						<label for="username">아이디</label>
 						</div>
-					<input type="submit" value="중복확인" class="checkBtn">
+					<input type="submit" value="중복확인" class="checkBtn"> 
 					</form>
 				</div>
 			</div>
