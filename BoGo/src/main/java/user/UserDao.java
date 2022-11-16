@@ -141,7 +141,40 @@ public class UserDao {
 		return pwCk;
 	}
 	
-	// ID 중복검사
+	// 탈퇴용 pw 찾기
+	public String getUserPwDel(String pw) {
+		String sql = "select * from `user` where pw=?";
+		String pwCheck = pw;
+		
+		try {
+			this.conn = DBManager.getConnection(this.url, this.user, this.password);
+			this.pstmt = conn.prepareStatement(sql);
+			this.pstmt.setString(1, pwCheck);
+			this.rs = pstmt.executeQuery();
+			
+			if(this.rs.next()) {
+				pwCheck = pw;
+			}
+			
+			else {
+				pwCheck = null;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return pwCheck;
+	}
+	
+	// ID 확인
 	public String userIdCheck(String id) {
 		String sql = "select * from `user` where id=?";
 		String idCheck = id;
@@ -175,23 +208,25 @@ public class UserDao {
 	// Update(회원정보 수정)
 	public void updateUser(UserDto userDto) {
 		
-		String sql = "update `user` set pw = ?, `name` = ?, phNum = ?, address = ? where driveCode = ?";
+		String sql = "UPDATE `user` SET pw=?, `name`=?, phNum=?, address=?, driveCode=? WHERE id=?;";
 		
 		try {
 			this.conn = DBManager.getConnection(this.url, this.user, this.password);
 			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setString(2, userDto.getPw());
-			this.pstmt.setString(3, userDto.getName());
-			this.pstmt.setString(4, userDto.getPhNum());
-			this.pstmt.setString(5, userDto.getAddress());
-			this.pstmt.setString(6, userDto.getDriveCode());
+			this.pstmt.setString(1, userDto.getPw());
+			this.pstmt.setString(2, userDto.getName());
+			this.pstmt.setString(3, userDto.getPhNum());
+			this.pstmt.setString(4, userDto.getAddress());
+			this.pstmt.setString(5, userDto.getDriveCode());
+			this.pstmt.setString(6, userDto.getId());
+			
 			this.pstmt.execute();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
-				this.pstmt.close();
-				this.conn.close();
+				pstmt.close();
+				conn.close();
 			} catch(SQLException e) {
 				e.printStackTrace();
 			}

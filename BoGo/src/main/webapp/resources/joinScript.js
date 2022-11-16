@@ -5,11 +5,11 @@
     	let p1 = document.getElementById('password1').value;
     		
     	if(p1.length < 6){
-    		alert('비밀번호는 6글자 이상으로 입력해주세요');
+    		alert('비밀번호는 6글자 이상으로 입력');
     		document.getElementById('password1').focus();
     	}
     	if(p1.length > 20){
-    		alert('비밀번호는 20글자 이하로 입력해주세요');
+    		alert('비밀번호는 20글자 이하로 입력');
     		document.getElementById('password1').value = null;
     	}
     }
@@ -78,7 +78,7 @@
 		let name = document.getElementById('name').value;
 		
 		if(name.length > 20){
-			alert('이름은 20글자 이하로 입력해주세요');
+			alert('이름은 20글자 이하로 입력');
 			document.getElementById('name').focus();
 			document.getElementById('name').value = null;
 		}
@@ -97,13 +97,13 @@
     			
    		} else {
    			if(p2.length < 6){
-   				alert('비밀번호는 6글자 이상으로 입력해주세요');
+   				alert('비밀번호는 6글자 이상으로 입력');
     			document.getElementById('password2').focus();
     			document.getElementById('password2').value = null;
     			return false;
     		}
     		if(p2.length > 20){
-    			alert('비밀번호는 20글자 이하로 입력해주세요');
+    			alert('비밀번호는 20글자 이하로 입력');
     			document.getElementById('password1').value = null;
    				document.getElementById('password2').value = null;
    			}  		
@@ -117,65 +117,7 @@
     			
     	}
     		
-  	}
-     
-$(document).ready(function(){
-
-  // Click event of the showPassword button
-  $('#showPassword').on('click', function(){
-
-    // Get the password field
-    var passwordField = $('#password1');
-
-    // Get the current type of the password field will be password or text
-    var passwordFieldType = passwordField.attr('type');
-
-    // Check to see if the type is a password field
-    if(passwordFieldType == 'password')
-    {
-        // Change the password field to text
-        passwordField.attr('type', 'text');
-
-        // Change the Text on the show password button to Hide
-        $(this).val('Hide');
-    } else {
-        // If the password field type is not a password field then set it to password
-        passwordField.attr('type', 'password');
-
-        // Change the value of the show password button to Show
-        $(this).val('Show');
-    }
-  });
-});
-
-$(document).ready(function(){
-
-  // Click event of the showPassword button
-  $('#showPassword2').on('click', function(){
-
-    // Get the password field
-    var passwordField = $('#password2');
-
-    // Get the current type of the password field will be password or text
-    var passwordFieldType = passwordField.attr('type');
-
-    // Check to see if the type is a password field
-    if(passwordFieldType == 'password')
-    {
-        // Change the password field to text
-        passwordField.attr('type', 'text');
-
-        // Change the Text on the show password button to Hide
-        $(this).val('Hide');
-    } else {
-        // If the password field type is not a password field then set it to password
-        passwordField.attr('type', 'password');
-
-        // Change the value of the show password button to Show
-        $(this).val('Show');
-    }
-  });
-});
+  	}   
 
 function check(){
 	const id = document.getElementById('id').value;
@@ -187,10 +129,10 @@ function check(){
 		alert("아이디를 입력해주세요");
 		return false;
 	} else if(pw1 === ""){
-		alert("비밀번호를 입력해 주세요");
+		alert("비밀번호를 입력");
 		return false;
 	} else if(pw2 === ""){
-		alert("비밀번호를 입력해 주세요");
+		alert("비밀번호를 입력");
 		return false;
 	} else if(id !=="" && pw1 !== "" && pw2 !== ""){
 		return true;

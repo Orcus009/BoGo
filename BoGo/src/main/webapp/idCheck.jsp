@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ReserVook</title>
+<title></title>
 </head>
 <body>
 	<div class="wrap">

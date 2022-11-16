@@ -12,32 +12,86 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
   </welcome-file-list>
   
   <servlet>
-    <servlet-name>joinCom</servlet-name>
-    <servlet-class>user.joinAction</servlet-class>
+    <servlet-name>JoinCom</servlet-name>
+    <servlet-class>user.JoinAction</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>joinCom</servlet-name>
-    <url-pattern>/joinCom</url-pattern>
+    <servlet-name>JoinCom</servlet-name>
+    <url-pattern>/JoinCom</url-pattern>
   </servlet-mapping>
   
-   	<servlet>
-		<servlet-name>idCheck</servlet-name>
-		<jsp-file>/idCheck.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>idCheck</servlet-name>
-		<url-pattern>/idCheck</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <servlet-name>LoginCom</servlet-name>
+    <servlet-class>user.LoginAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LoginCom</servlet-name>
+    <url-pattern>/LoginCom</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LogoutCom</servlet-name>
+    <servlet-class>user.LogoutAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LogoutCom</servlet-name>
+    <url-pattern>/LogoutCom</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DeleteCom</servlet-name>
+    <servlet-class>user.DeleteAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DeleteCom</servlet-name>
+    <url-pattern>/DeleteCom</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UpdatePwCheck</servlet-name>
+    <servlet-class>user.UpdatePwCheckAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UpdatePwCheck</servlet-name>
+    <url-pattern>/UpdatePwCheck</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>InfoUpdateCom</servlet-name>
+    <servlet-class>user.InfoUpdateAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>InfoUpdateCom</servlet-name>
+    <url-pattern>/InfoUpdateCom</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 경계선 -->
+  
+  <servlet>
+	<servlet-name>idCheck</servlet-name>
+	<jsp-file>/idCheck.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>idCheck</servlet-name>
+	<url-pattern>/idCheck</url-pattern>
+  </servlet-mapping>
 
-	<servlet>
-		<servlet-name>idCheckProc</servlet-name>
-		<jsp-file>/idCheckProc.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>idCheckProc</servlet-name>
-		<url-pattern>/idCheckProc</url-pattern>
-	</servlet-mapping>
+  <servlet>
+	<servlet-name>idCheckProc</servlet-name>
+	<jsp-file>/idCheckProc.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>idCheckProc</servlet-name>
+	<url-pattern>/idCheckProc</url-pattern>
+  </servlet-mapping>  	
   
   <servlet>
     <servlet-name>index</servlet-name>
@@ -47,6 +101,56 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
   <servlet-mapping>
     <servlet-name>index</servlet-name>
     <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>join</servlet-name>
+    <jsp-file>/join.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>join</servlet-name>
+    <url-pattern>/join</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>myPage</servlet-name>
+    <jsp-file>/myPage.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>myPage</servlet-name>
+    <url-pattern>/myPage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>delete</servlet-name>
+    <jsp-file>/delete.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>delete</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>infoUpdateFront</servlet-name>
+    <jsp-file>/infoUpdateFront.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>infoUpdateFront</servlet-name>
+    <url-pattern>/infoUpdateFront</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>infoUpdate</servlet-name>
+    <jsp-file>/infoUpdate.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>infoUpdate</servlet-name>
+    <url-pattern>/infoUpdate</url-pattern>
   </servlet-mapping>
   
 </web-app>
