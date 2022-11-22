@@ -67,6 +67,42 @@ public class UserDao {
 	}
 	
 	// Read
+	// 유저 정보
+	public UserDto getUserInfo(String id) {
+		UserDto user = null;
+		String sql = "select * from `user` where id = ?";
+		
+		try {
+			this.conn = DBManager.getConnection(this.url, this.user, this.password);
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.pstmt.setString(1, id);
+			this.rs = this.pstmt.executeQuery();
+			
+			while(this.rs.next()) {
+				String pw = this.rs.getString(2);
+				String name = this.rs.getString(3);
+				String phNum = this.rs.getString(4);
+				String address = this.rs.getString(5);
+				String driveCode = this.rs.getString(6);
+				int accountType = this.rs.getInt(7);
+				
+				user = new UserDto(id, pw, name, phNum, address, driveCode, accountType);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				this.rs.close();
+				this.pstmt.close();
+				this.conn.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return user;
+	}
+
+	
 	// 이름과 번호로 ID 찾기
 	public String getUserId(String name, String phNum) {
 		String sql = "select * from `user` where `name` = ?, phNum = ?";
@@ -141,7 +177,7 @@ public class UserDao {
 		return pwCk;
 	}
 	
-	// 탈퇴용 pw 찾기
+	// pw 확인
 	public String getUserPwDel(String pw) {
 		String sql = "select * from `user` where pw=?";
 		String pwCheck = pw;

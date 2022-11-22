@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>BoGo RentCar</h1>
+        <a href="index"><img src="resources/img/Logo.png"></a>
     </header>
 </body>
 </html>

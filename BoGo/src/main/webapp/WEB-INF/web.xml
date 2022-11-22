@@ -71,6 +71,46 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
     <url-pattern>/InfoUpdateCom</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>NoticeDelete</servlet-name>
+    <servlet-class>notice.NoticeDeleteAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>NoticeDelete</servlet-name>
+    <url-pattern>/NoticeDelete</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>NoticeUpdate</servlet-name>
+    <servlet-class>notice.NoticeUpdateAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>NoticeUpdate</servlet-name>
+    <url-pattern>/NoticeUpdate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>NoticeWrite</servlet-name>
+    <servlet-class>notice.NoticeWriteAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>NoticeWrite</servlet-name>
+    <url-pattern>/NoticeWrite</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>RentAction</servlet-name>
+    <servlet-class>rent.RentAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>RentAction</servlet-name>
+    <url-pattern>/RentAction</url-pattern>
+  </servlet-mapping>
+  
   <!-- 경계선 -->
   
   <servlet>
@@ -151,6 +191,36 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
   <servlet-mapping>
     <servlet-name>infoUpdate</servlet-name>
     <url-pattern>/infoUpdate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>notice</servlet-name>
+    <jsp-file>/notice.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>notice</servlet-name>
+    <url-pattern>/notice</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>noticeRead</servlet-name>
+    <jsp-file>/noticeRead.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>noticeRead</servlet-name>
+    <url-pattern>/noticeRead</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>noticeWrite</servlet-name>
+    <jsp-file>/noticeWrite.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>noticeWrite</servlet-name>
+    <url-pattern>/noticeWrite</url-pattern>
   </servlet-mapping>
   
 </web-app>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="header.jsp" />
 <h1>회원 탈퇴</h1>
 <form method="post" action="DeleteCom" name="DelForm" onsubmit="return check()">
 	<div class="input-box">
@@ -19,5 +20,6 @@
 	</div>
 	<input type="submit" value="회원탈퇴">
 </form>
+<jsp:include page="footer.jsp" />
 </body>
 </html>

@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<h1>회원가입</h1>
 	<form method="post" action="JoinCom" name="regForm" onsubmit="return check()">
 		<div class="input-box">
@@ -57,10 +58,18 @@
 		<div class="input-box">
 			<input type="text" id="driveCode" name="driveCode" autocomplete="off"
 				onchange="driveCodeMaxCheck()" placeholder="운전면허 코드" required><br>
+				
+	<!--	<input type="text" class="driveCode_input" id="driveCode" name="driveCode" autocomplete="off" onchange="driveCodeCheck()" readonly
+				placeholder="인증검사 버튼을 눌러주세요" required> 
+				<label for="driveCode">운전면허 코드</label>
+			<div class="overlapBtn">
+				<input type="button" class="driveCode_overlap_button" onclick="driveCodeCheck()" value="면허검사">
+			</div>	-->
 		</div>
 
 		<input type="submit" value="계정 생성" class="submit-btn">
 	</form>
+	<jsp:include page="footer.jsp" />
 </body>
 <script src="resources/joinScript.js"></script>
 <script src="resources/findAddress.js"></script>
