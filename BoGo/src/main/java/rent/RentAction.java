@@ -36,24 +36,25 @@ public class RentAction extends HttpServlet {
 		String user_id = request.getParameter("user_id");
 		String carName = request.getParameter("carName");
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String rentalDate = request.getParameter("rentalDate");
-		
-		Timestamp rentalDate1 = null;
-		try {
-			rentalDate1 = (Timestamp)sdf.parse(rentalDate);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		String startDate = request.getParameter("startDate");
 		String endDate = request.getParameter("endDate");
-		int price = Integer.parseInt(request.getParameter("price"));
+		int carPrice = Integer.parseInt(request.getParameter("carPrice"));
+		
+		System.out.println(user_id);
+		System.out.println(carName);
+		System.out.println(rentalDate);
+		System.out.println(startDate);
+		System.out.println(endDate);
+		System.out.println(carPrice);
+		
 		
 		RentDao dao = RentDao.getInstance();
-		RentDto rent = new RentDto(user_id, carName, rentalDate1, startDate, endDate, price);
+		RentDto rent = new RentDto(user_id, carName, rentalDate, startDate, endDate, carPrice);
 		dao.createRent(rent);
+		
+		request.getRequestDispatcher("index").forward(request, response);
 	}
 
 	/**

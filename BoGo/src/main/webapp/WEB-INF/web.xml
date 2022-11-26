@@ -101,7 +101,7 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
     <url-pattern>/NoticeWrite</url-pattern>
   </servlet-mapping>
   
-    <servlet>
+  <servlet>
     <servlet-name>RentAction</servlet-name>
     <servlet-class>rent.RentAction</servlet-class>
   </servlet>
@@ -109,6 +109,16 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
   <servlet-mapping>
     <servlet-name>RentAction</servlet-name>
     <url-pattern>/RentAction</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DriveCodeCheckAction</servlet-name>
+    <servlet-class>user.DriveCodeCheckAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DriveCodeCheckAction</servlet-name>
+    <url-pattern>/DriveCodeCheckAction</url-pattern>
   </servlet-mapping>
   
   <!-- 경계선 -->

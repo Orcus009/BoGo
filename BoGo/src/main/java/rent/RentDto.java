@@ -1,17 +1,15 @@
 package rent;
 
-import java.sql.Timestamp;
-
 public class RentDto {
 
 	private String user_id;
 	private String car;
-	private Timestamp rentalDate;
+	private String rentalDate;
 	private String startDate;
 	private String endDate;
 	private int price;
 	
-	public RentDto(String user_id, String car, Timestamp rentalDate, String startDate, String endDate, int price) {
+	public RentDto(String user_id, String car, String rentalDate, String startDate, String endDate, int price) {
 		super();
 		this.user_id = user_id;
 		this.car = car;
@@ -37,11 +35,11 @@ public class RentDto {
 		this.car = car;
 	}
 
-	public Timestamp getRentalDate() {
+	public String getRentalDate() {
 		return rentalDate;
 	}
 
-	public void setRentalDate(Timestamp rentalDate) {
+	public void setRentalDate(String rentalDate) {
 		this.rentalDate = rentalDate;
 	}
 

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.checkBox{
+	position: absolute;
+	background-color: rgb(176, 167, 163);
+	width: 400px;
+	margin-left: 550px;
+	padding: 20px;
+	height: 470px;
+	border-radius: 30px;
+}
+
+.box{
+	margin-bottom: 20px;
+}
+
+.carName, .rentalDate, .startDate, .endDate, .carPrice{
+	font-size: 25px;
+	background-color: rgb(219, 215, 213);
+	border-radius: 10px;
+	padding: 0 5px 0 5px;
+}
+
+input[type="submit"]{
+	width: 400px;
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+	font-size: 25px;
+	font-weight: 900;
+	background-color: rgb(109, 132, 132);
+}
+
+ footer{
+ 	margin-top: 560px;
+	height: 70px;
+	width: 1518px;
+	background-color: rgb(176, 167, 163);
+}

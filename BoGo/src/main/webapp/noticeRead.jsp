@@ -8,6 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/noticeRead.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -33,21 +34,21 @@
 	
 	<form method="post" name="form">
 		<input type="hidden" name="noticeNo" id="noticeNo" value="<%=no%>">
-		<input type="text" name="title" value="<%=notice.getTitle() %>"<%if(log != null && log.equals("Owner")) {%><%} %>>
-		<textarea rows="20" name="content" <%if(log == null){%>readonly<%} %>><%=notice.getContent() %></textarea>
-		<input type="button" onclick="location.href='notice'" value="글목록">
+		<input type="text" class="title" name="title" value="<%=notice.getTitle() %>"<%if(log == null || !log.equals("Owner")){%>readonly<%} %>>
+		<textarea rows="20" name="content" <%if(log == null || !log.equals("Owner")){%>readonly<%} %>><%=notice.getContent() %></textarea>
+		<input type="button" class="submit" onclick="location.href='notice'" style="cursor:pointer" value="글목록">
 	
 		<% 
 		if(at == 7){
 			%>
-			<input type="submit" onclick="javascript: form.action='NoticeDelete';" value="삭제">
-			<input type="submit" onclick="javascript: form.action='NoticeUpdate';" value="수정">
+			<input type="submit" class="submit" onclick="javascript: form.action='NoticeDelete';" style="cursor:pointer" value="삭제">
+			<input type="submit" class="submit" onclick="javascript: form.action='NoticeUpdate';" style="cursor:pointer" value="수정">
 		<%} %>
 	</form>
-	<%} 
-	else {
-		response.sendRedirect("notice");
-	}%>
+		<%} 
+		else {
+			response.sendRedirect("notice");
+		}%>
 <jsp:include page="footer.jsp" />
 </body>
 </html>

@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/notice.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -47,7 +48,7 @@
 	if(log != null)
 		at = user.getAccountType();
 	%>
-	<h1>공지사항</h1>
+	<div class="notice"><h1>공지사항</h1></div>
 	<%if(at == 7) {%>
 		<button class="NoticeWrite" onclick="location.href='noticeWrite'">글 작성</button>
 	<%} %>
@@ -55,10 +56,10 @@
 	<table class="notice_table">
 		<thead>
 			<tr>
-				<th>제목</th>
-				<th>아이디</th>
-				<th>등록 날짜</th>
-				<th>수정 날짜</th>
+				<th class="title">제목</th>
+				<th class="id">아이디</th>
+				<th class="regDate">등록 날짜</th>
+				<th class="modDate">수정 날짜</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -67,10 +68,10 @@
 				java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd"); 
 			%>
 				<tr>
-					<td><a href="noticeRead?no=<%=list.get(i).getNo()%>"><%=list.get(i).getTitle() %></a></td>
-					<td>운영자</td>
-					<td><%=sdf.format(list.get(i).getRegDate()) %></td>
-					<td><%=sdf.format(list.get(i).getModDate()) %></td>
+					<td class="title"><a href="noticeRead?no=<%=list.get(i).getNo()%>"><%=list.get(i).getTitle() %></a></td>
+					<td class="id">운영자</td>
+					<td class="regDate"><%=sdf.format(list.get(i).getRegDate()) %></td>
+					<td class="modDate"><%=sdf.format(list.get(i).getModDate()) %></td>
 				</tr>
 				<%} else {%>
 				<tr>

@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@import url('https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css');
+
+*{
+font-family: 'NanumSquareRoundLight';
+font-family: 'NanumSquareRound';
+font-family: 'NanumSquareRoundBold';
+font-family: 'NanumSquareRoundExtraBold';
+margin: 0;
+padding: 0;
+}
+
+header {
+	height: 100px;
+	width: 1000px;
+	display: flex;
+	margin: auto;
+	border-bottom: 3px solid #c3c3c3;
+} 
+
+nav {
+	grid-area: nav;
+	height : 70px;
+	text-align: center;
+	width: auto;
+	line-height: 70px;
+	font-weight: 800;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background-color: rgb(176, 167, 163);
+    margin: 50px 120px 0px 120px;
+    border-radius: 30px;
+}
+
+li{
+	width: 100px;
+}
+
+a:link { 
+	color:black; 
+}
+
+a:visited { 
+	color:black; 
+}
+
+a:hover { 
+	color:red; 
+}
+
+a:active { 
+	color:green; 
+}
+
+a { 
+	text-decoration:none;
+}
+
+img{
+	margin: auto;
+	display: block;
+}
+
+div.login{
+	text-align: center;
+}
+
+form{
+	height : 100px;
+}
+
+input{
+	height: 40px;
+	width : 200px;
+	margin-bottom : 20px;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+footer{
+	position : fixed;
+	bottom : 0;
+}
+
+.links{
+	margin-top: 80px;
+}
+
+.submit-btn{
+	background-color: rgb(109, 132, 132);
+	border: 1px solid rgb(109, 132, 132);
+}
+
+div.box{
+	text-align: center;
+}
+
+.box{
+	margin-bottom : 20px;
+	font-size: 25px;
+}

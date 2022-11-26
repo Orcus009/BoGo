@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/rentalAll.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -17,7 +18,7 @@ ArrayList<CarDto> list = dao.getCarAll();
 %>
 <nav>
 	<ul>
-		<li><a href="rentalAll.jsp">전체</a></li>
+		<li class="select"><a href="rentalAll.jsp">전체</a></li>
 		<li><a href="rentalSmall.jsp">경차/소형</a></li>
 		<li><a href="rentalMediumJ.jsp">준중형</a></li>
 		<li><a href="rentalMedium.jsp">중형</a></li>
@@ -28,26 +29,27 @@ ArrayList<CarDto> list = dao.getCarAll();
 	</ul>
 </nav>
 <h1>차량 목록</h1>
+<section>
 <table>
 	<thead>
 		<tr>
-			<th>사진</th>
-			<th>이름</th>
-			<th>가격</th>
+			<th class="table_img">사진</th>
+			<th class="table_name">이름</th>
+			<th class="table_price">가격</th>
 		</tr>
 	</thead>
 	<tbody>
-		
 		<%for(CarDto car : list){ %>
 			<tr>
-				<td><img src="resources/img/<%=car.getCarName() %>.png"></td>
-				<td><a href="carDetail.jsp?carName=<%=car.getCarName()%>"><%=car.getCarName()%></a></td>
+				<td class="carimg"><img src="resources/img/<%=car.getCarName() %>.png"></td>
+				<td class="carname"><a href="carDetail.jsp?carName=<%=car.getCarName()%>"><%=car.getCarName()%></a></td>
 				
-				<td><%=car.getCarPrice() %></td>
+				<td class="carprice"><%=car.getCarPrice() %>원</td>
 			</tr>
 		<%} %>
 	</tbody>
 </table>
+</section>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

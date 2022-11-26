@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 50px;
+}
+
+div{
+	margin-top: 50px;
+	font-size: 25px;
+}
+
+.info, .delete, .history{
+	margin: 0 35% 0 35%;
+	padding: 10px 0 10px 0;
+	background-color: rgb(109, 132, 132);
+	border-radius: 20px;
+	font-weight: 800;
+}
+
+footer{
+ 	margin-top: 215px;
+	height: 70px;
+	background-color: rgb(176, 167, 163);
+}

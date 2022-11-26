@@ -21,8 +21,6 @@ public class UserDto {
 		this.accountType = accountType;
 	}
 	
-	
-	
 	public UserDto(String pw, String name, String phNum, String address, String driveCode, String id) {
 		super();
 		this.pw = pw;
@@ -32,8 +30,6 @@ public class UserDto {
 		this.driveCode = driveCode;
 		this.id = id;
 	}
-
-
 
 	public String getId() {
 		return id;

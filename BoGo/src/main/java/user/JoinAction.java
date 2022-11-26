@@ -43,9 +43,11 @@ public class JoinAction extends HttpServlet {
 		address = address_front + " " + address_back;
 		
 		String driveCode = request.getParameter("driveCode");
+		String driveCode1 = driveCode.substring(0, 2) + "-" + driveCode.substring(2, 4) + "-" + driveCode.substring(4, 10) + "-" + driveCode.substring(10, 12);
+		
 		int accountType = 1;
 
-		UserDto userData = new UserDto(id, password, name, phone, address, driveCode, accountType);
+		UserDto userData = new UserDto(id, password, name, phone, address, driveCode1, accountType);
 
 		dao.createUser(userData);
 

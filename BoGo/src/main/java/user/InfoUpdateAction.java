@@ -46,9 +46,11 @@ public class InfoUpdateAction extends HttpServlet {
 		address = address_front + " " + address_back;
 		
 		String driveCode = request.getParameter("driveCode");
+		String driveCode1 = driveCode.substring(0, 2) + "-" + driveCode.substring(2, 4) + "-" + driveCode.substring(4, 10) + "-" + driveCode.substring(10, 12);
+		
 		String id = log;
 		
-		UserDto userData = new UserDto(password, name, phone, address, driveCode, id);
+		UserDto userData = new UserDto(password, name, phone, address, driveCode1, id);
 		dao.updateUser(userData);
 		request.getRequestDispatcher("index").forward(request, response);
 	}

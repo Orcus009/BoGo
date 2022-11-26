@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import util.DBManager;
@@ -44,7 +43,7 @@ public class RentDao {
 			if(this.rs.next()) {
 				String user_id = this.rs.getString(1);
 				String car = this.rs.getString(2);
-				Timestamp rentalDate = this.rs.getTimestamp(3);
+				String rentalDate = this.rs.getString(3);
 				String startDate = this.rs.getString(4);
 				String endDate = this.rs.getString(5);
 				int price = this.rs.getInt(6);
@@ -67,37 +66,30 @@ public class RentDao {
 	}
 	
 	// 이용자 별 예역 내약 조회
-	public RentDto getRentUser(String user_id) {
-		RentDto rent = null;
-		String sql = "SELECT * FROM rent WHERE user_id = ? OREDER BY rentalDate";
+	public ArrayList<RentDto> getRentUserId(String user_id){
+		ArrayList<RentDto> list = new ArrayList<RentDto>();
+		String sql = "select * from rent where user_id = ?";
 		
 		try {
 			this.conn = DBManager.getConnection(this.url, this.user, this.password);
-			this.pstmt = conn.prepareStatement(sql);
+			this.pstmt = this.conn.prepareStatement(sql);
 			this.pstmt.setString(1, user_id);
-			this.rs = pstmt.executeQuery();
+			this.rs = this.pstmt.executeQuery();
 			
-			if(this.rs.next()) {
+			while(this.rs.next()) {
 				String car = this.rs.getString(2);
-				Timestamp rentalDate = this.rs.getTimestamp(3);
+				String rentalDate = this.rs.getString(3);
 				String startDate = this.rs.getString(4);
 				String endDate = this.rs.getString(5);
 				int price = this.rs.getInt(6);
 				
-				rent = new RentDto(user_id, car, rentalDate, startDate, endDate, price);
+				RentDto rent = new RentDto(user_id, car, rentalDate, startDate, endDate, price);
+				list.add(rent);
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				this.rs.close();
-				this.pstmt.close();
-				this.conn.close();
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
 		}
-		return rent;
+		return list;
 	}
 	
 	// 예약 날짜 대조
@@ -144,7 +136,7 @@ public class RentDao {
 			
 			this.pstmt.setString(1, rent.getUser_id());
 			this.pstmt.setString(2, rent.getCar());
-			this.pstmt.setTimestamp(3, rent.getRentalDate());
+			this.pstmt.setString(3, rent.getRentalDate());
 			this.pstmt.setString(4, rent.getStartDate());
 			this.pstmt.setString(5, rent.getEndDate());
 			this.pstmt.setInt(6, rent.getPrice());

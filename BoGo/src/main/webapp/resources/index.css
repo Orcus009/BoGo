@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+footer{
+	grid: footer;
+	height: 70px;
+	background-color: rgb(176, 167, 163);
+	width: 1518px;
+}

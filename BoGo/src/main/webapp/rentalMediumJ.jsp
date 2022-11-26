@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/rentalMediumJ.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -19,7 +20,7 @@ ArrayList<CarDto> list = dao.getCarMediumJ();
 	<ul>
 		<li><a href="rentalAll.jsp">전체</a></li>
 		<li><a href="rentalSmall.jsp">경차/소형</a></li>
-		<li><a href="rentalMediumJ.jsp">준중형</a></li>
+		<li class="select"><a href="rentalMediumJ.jsp">준중형</a></li>
 		<li><a href="rentalMedium.jsp">중형</a></li>
 		<li><a href="rentalBig.jsp">대형</a></li>
 		<li><a href="rentalHighClass.jsp">고급</a></li>
@@ -31,9 +32,9 @@ ArrayList<CarDto> list = dao.getCarMediumJ();
 <table>
 	<thead>
 		<tr>
-			<th>사진</th>
-			<th>이름</th>
-			<th>가격</th>
+			<th class="table_img">사진</th>
+			<th class="table_name">이름</th>
+			<th class="table_price">가격</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -43,7 +44,7 @@ ArrayList<CarDto> list = dao.getCarMediumJ();
 				<td><img src="resources/img/<%=car.getCarName() %>.png"></td>
 				<td><a href="carDetail.jsp?carName=<%=car.getCarName()%>"><%=car.getCarName()%></a></td>
 				
-				<td><%=car.getCarPrice() %></td>
+				<td><%=car.getCarPrice() %>원</td>
 			</tr>
 		<%} %>
 	</tbody>

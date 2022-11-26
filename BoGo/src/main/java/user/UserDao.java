@@ -101,81 +101,6 @@ public class UserDao {
 		}
 		return user;
 	}
-
-	
-	// 이름과 번호로 ID 찾기
-	public String getUserId(String name, String phNum) {
-		String sql = "select * from `user` where `name` = ?, phNum = ?";
-		
-		String nameCk = name;
-		String phNumCk = phNum;
-		String idCk = "";
-		
-		try {
-			this.conn = DBManager.getConnection(this.url, this.user, this.password);
-			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setString(1, nameCk);
-			this.pstmt.setString(2, phNumCk);
-			this.rs = this.pstmt.executeQuery();
-			
-			if(this.rs.next()) {
-				idCk = this.rs.getString(1);
-			}
-			
-			else {
-				idCk = null;
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				this.rs.close();
-				this.pstmt.close();
-				this.conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return idCk;
-	}
-	
-	// 패스워드 찾기
-	public String getUserPw(String id, String driveCode) {
-		String sql = "select * from `user` where id = ?, driveCode = ?";
-		
-		String idCk = id;
-		String driveCodeCk = driveCode;
-		String pwCk = "";
-		
-		try {
-			this.conn = DBManager.getConnection(this.url, this.user, this.password);
-			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setString(1, idCk);
-			this.pstmt.setString(2, driveCodeCk);
-			this.rs = this.pstmt.executeQuery();
-			
-			if(this.rs.next()) {
-				pwCk = this.rs.getString(2);
-			}
-			
-			else {
-				pwCk = null;
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				this.rs.close();
-				this.pstmt.close();
-				this.conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return pwCk;
-	}
 	
 	// pw 확인
 	public String getUserPwDel(String pw) {
@@ -239,7 +164,6 @@ public class UserDao {
 		}
 		return idCheck;
 	}
-	
 	
 	// Update(회원정보 수정)
 	public void updateUser(UserDto userDto) {

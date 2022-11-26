@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/noticeWrite.css">
 <title>Insert title here</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<h1>공지사항</h1>
 <form method="post" action="NoticeWrite">
 	<table>
 		<thead>
@@ -22,7 +22,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<input type="submit" value="등록">
+	<input type="submit" class="submit" style="cursor:pointer" value="등록">
 </form>
 <jsp:include page="footer.jsp"/>
 </body>
