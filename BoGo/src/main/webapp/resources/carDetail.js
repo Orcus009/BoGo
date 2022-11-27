@@ -31,7 +31,7 @@ function checkRental(){
 		    const endDate = $('#endDate').val();
 		    const carPrice = $('#carPrice').val();
 		    const animal = $('input:radio[name=animal]:checked').val();
-		    location.href= `rentCheck.jsp?startDate=` + startDate + `&endDate=` + endDate + `&carName=` 
+		    location.href= `rentCheck?startDate=` + startDate + `&endDate=` + endDate + `&carName=` 
 		           + carName + `&carPrice=` + carPrice +`&animal=` + animal;
 	 	}
    }

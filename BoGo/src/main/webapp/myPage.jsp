@@ -13,7 +13,7 @@
 <div style=" text-align: center;">
 	<div class="info"><a href="infoUpdateFront">개인정보 수정</a></div><br>
 	<div class="delete"><a href="delete">계정 탈퇴</a></div><br>
-	<div class="history"><a href="rentHistory.jsp">차량 대여 내역</a></div>
+	<div class="history"><a href="rentHistory">차량 대여 내역</a></div>
 </div>
 <jsp:include page="footer.jsp" />
 </body>

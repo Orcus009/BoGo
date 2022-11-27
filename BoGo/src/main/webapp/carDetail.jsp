@@ -51,11 +51,12 @@ RentDao rent = RentDao.getInstance();
 	<div class="wrap">
 		<h2>예약 날짜</h2>
 		<input id="startDate" required name="startDate" type="date">
+		<%request.setAttribute("startDate", "startDate"); %>
 	</div>
 	
 	<div class="wrap">
 		<h2>종료 날짜</h2>
-		<input id="endDate" required name="endDate" type="date">
+		<input id="endDate" required name="endDate" min="<%request.getParameter("startDate"); %>" type="date">
 		<h3>※차량을 1일 안으로 대여할 경우 원 가격의 70%로 대여</h3>
 	</div>
 	

@@ -30,18 +30,21 @@ public class DeleteAction extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("log");
+		String logId = (String)session.getAttribute("log");
+		String logPw = (String)session.getAttribute("logPw");
 		
-		UserDao dao = UserDao.getInstance();
+		String id = request.getParameter("id");
 		String pw = request.getParameter("password");
 		
-		String idCheck = dao.userIdCheck(id);
-		String pwCheck = dao.getUserPwDel(pw);
+		UserDao dao = UserDao.getInstance();
 		
-		if(idCheck != null && pwCheck != null) {
+		String idCheck = dao.userIdCheck(logId);
+		
+		if(id==logId && pw==logPw) {
 			dao.userDelete(idCheck);
 			System.out.println("탈퇴 완료");
 			session.removeAttribute("log");
+			session.removeAttribute("logPw");
 		}
 		
 		else {

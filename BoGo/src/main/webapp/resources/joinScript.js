@@ -74,10 +74,6 @@
    		}
    	}
    	
-    function driveCodeCheck(){
-		window.open("driveCodeCheck.jsp","driveCodewin","resizable=no, top=400px, left=750px, height=250px, width=350px");
-	}
-   	
    	function nameMaxCheck(){
 		let name = document.getElementById('name').value;
 		

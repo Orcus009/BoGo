@@ -18,14 +18,14 @@ ArrayList<CarDto> list = dao.getCarBig();
 %>
 <nav>
 	<ul>
-		<li><a href="rentalAll.jsp">전체</a></li>
-		<li><a href="rentalSmall.jsp">경차/소형</a></li>
-		<li><a href="rentalMediumJ.jsp">준중형</a></li>
-		<li><a href="rentalMedium.jsp">중형</a></li>
-		<li class="select"><a href="rentalBig.jsp">대형</a></li>
-		<li><a href="rentalHighClass.jsp">고급</a></li>
-		<li><a href="rentalInCome.jsp">수입차</a></li>
-		<li><a href="rentalRv.jsp">RV/승합차</a></li>
+		<li><a href="rentalAll">전체</a></li>
+		<li><a href="rentalSmall">경차/소형</a></li>
+		<li><a href="rentalMediumJ">준중형</a></li>
+		<li><a href="rentalMedium">중형</a></li>
+		<li class="select"><a href="rentalBig">대형</a></li>
+		<li><a href="rentalHighClass">고급</a></li>
+		<li><a href="rentalInCome">수입차</a></li>
+		<li><a href="rentalRv">RV/승합차</a></li>
 	</ul>
 </nav>
 <h1>차량 목록</h1>
@@ -42,7 +42,7 @@ ArrayList<CarDto> list = dao.getCarBig();
 		<%for(CarDto car : list){ %>
 			<tr>
 				<td><img src="resources/img/<%=car.getCarName() %>.png"></td>
-				<td><a href="carDetail.jsp?carName=<%=car.getCarName()%>"><%=car.getCarName()%></a></td>
+				<td><a href="carDetail?carName=<%=car.getCarName()%>"><%=car.getCarName()%></a></td>
 				
 				<td><%=car.getCarPrice() %>원</td>
 			</tr>

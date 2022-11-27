@@ -233,4 +233,114 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
     <url-pattern>/noticeWrite</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>rentalAll</servlet-name>
+    <jsp-file>/rentalAll.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalAll</servlet-name>
+    <url-pattern>/rentalAll</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentalSmall</servlet-name>
+    <jsp-file>/rentalSmall.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalSmall</servlet-name>
+    <url-pattern>/rentalSmall</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentalMediumJ</servlet-name>
+    <jsp-file>/rentalMediumJ.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalMediumJ</servlet-name>
+    <url-pattern>/rentalMediumJ</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentalMedium</servlet-name>
+    <jsp-file>/rentalMedium.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalMedium</servlet-name>
+    <url-pattern>/rentalMedium</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentalBig</servlet-name>
+    <jsp-file>/rentalBig.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalBig</servlet-name>
+    <url-pattern>/rentalBig</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentalHighClass</servlet-name>
+    <jsp-file>/rentalHighClass.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalHighClass</servlet-name>
+    <url-pattern>/rentalHighClass</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentalInCome</servlet-name>
+    <jsp-file>/rentalInCome.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalInCome</servlet-name>
+    <url-pattern>/rentalInCome</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentalRv</servlet-name>
+    <jsp-file>/rentalRv.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentalRv</servlet-name>
+    <url-pattern>/rentalRv</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>carDetail</servlet-name>
+    <jsp-file>/carDetail.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>carDetail</servlet-name>
+    <url-pattern>/carDetail</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentCheck</servlet-name>
+    <jsp-file>/rentCheck.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentCheck</servlet-name>
+    <url-pattern>/rentCheck</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>rentHistory</servlet-name>
+    <jsp-file>/rentHistory.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>rentHistory</servlet-name>
+    <url-pattern>/rentHistory</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

@@ -24,7 +24,7 @@
     else {%>
 		<nav>
 		    <ul>
-		        <li><a href="rentalAll.jsp">차량대여</a></li>
+		        <li><a href="rentalAll">차량대여</a></li>
 		        <li><a href="notice">공지사항</a></li>
 		    </ul>
 		</nav>
